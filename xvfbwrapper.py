@@ -72,7 +72,7 @@ class Xvfb(object):
             self.new_display = self._get_next_unused_display()
         display_var = ':{}'.format(self.new_display)
         self.xvfb_cmd = ['Xvfb', display_var] + self.extra_xvfb_args
-        print('xvfb cmd : '+self.xvfb_cmd)
+        print(self.xvfb_cmd)
         with open(os.devnull, 'w') as fnull:
             self.proc = subprocess.Popen(self.xvfb_cmd,
                                          stdout=fnull,
