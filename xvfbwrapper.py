@@ -81,11 +81,14 @@ class Xvfb(object):
         # give Xvfb time to start
         time.sleep(self.__class__.SLEEP_TIME_BEFORE_START)
         ret_code = self.proc.poll()
+
+        print(ret_code)
         if ret_code is None:
             self._set_display_var(self.new_display)
+            print(ret_code)
         else:
             self._cleanup_lock_file()
-            raise RuntimeError('Xvfb did not start ({0}): {1}'
+            raise RuntimeError('Xxvfb_cmdvfb did not start ({0}): {1}'
                                .format(ret_code, self.xvfb_cmd))
 
     def stop(self):
@@ -164,3 +167,4 @@ class Xvfb(object):
 
     def _set_display_var(self, display):
         os.environ['DISPLAY'] = ':{}'.format(display)
+        print( os.environ['DISPLAY'])
