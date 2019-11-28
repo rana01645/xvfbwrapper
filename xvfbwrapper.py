@@ -167,4 +167,4 @@ class Xvfb(object):
 
     def _set_display_var(self, display):
         os.environ['DISPLAY'] = ':{}'.format(display)
-        print( os.environ['DISPLAY'])
+        print( os.environ)
